@@ -2,7 +2,14 @@
 <div class="about">
     <Banner />
     <h1>This is an about page</h1>
-    <HelloWorld msg="Welcome to my about page" />
+    <!-- passage de donnees avec le slot -->
+    <HelloWorld>
+        <template v-slot:msg>
+            <h2>apres passage du prop au slot</h2>
+        </template>
+    </HelloWorld>
+    <!-- passage de donnees avec le prop -->
+    <!-- <HelloWorld msg="Welcome to my about page" /> -->
 </div>
 </template>
 
