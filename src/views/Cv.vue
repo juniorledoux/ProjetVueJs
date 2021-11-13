@@ -40,6 +40,8 @@
         </article>
         <AboutAuthor description="En effet je suis un jeune etudiant en genie logiciel niveau 1, dont le parcours fut tres ouvert et parsemé d'experiences et de formations dont je vous les presentes ici." :photo="require('../assets/images/juni.jpg')" name="WATAT" fisrtname="Junior Ledoux" birthday="né le: 17 avril 2001" birthday_city="A: Ngaoundere." />
     </section>
+    <div style="text-align:center;color:red">hhg</div>
+
 </div>
 </template>
 
@@ -53,6 +55,24 @@ export default {
         Banner,
         HelloWorld,
         AboutAuthor,
+    },
+    beforeCreate() {
+        console.log("je ne suis pas encore crée");
+    },
+    created() {
+        console.log("je suis crée");
+    },
+    beforeMount() {
+        console.log("pas encore monté");
+    },
+    mounted() {
+        console.log("je suis monté");
+    },
+    beforeUnmount() {
+        console.log("pas encore detruit");
+    },
+    unmounted() {
+        console.log("je suis detruis");
     },
 };
 </script>

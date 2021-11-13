@@ -2,8 +2,9 @@
 <div id="aside">
     <h1>A propos de l'auteur</h1>
     <img src="../assets/images/bulle.png" alt="" id="fleche_bulle" />
-    <p id="photo_zorzor"> <a href="#"> <img :src="photo" alt="photo de LeDoux" class="ma_photo" /> </a> </p>
-    <p>{{ name }} </p>
+    <p id="photo_zorzor"> <a href="#" @click="emettreEvent"> <img :src="photo" alt="photo de LeDoux" class="ma_photo" /> </a> </p>
+    <p v-if="name==='hey ! cool nah ^_^'"> <span style="color:red">{{ name }}</span> </p>
+    <p v-else>{{ name }} </p>
     <p>{{ fisrtname }}</p>
     <p>{{ birthday }}</p>
     <p>{{ birthday_city }}</p>
@@ -15,7 +16,40 @@
 <script>
 export default {
     name: 'AboutAuthor',
-    props: ['photo', 'name', 'fisrtname', 'birthday', 'birthday_city', 'description'],
+    props: {
+        photo: {
+            type: String,
+        },
+        name: {
+            type: String,
+            required: true,
+        },
+        fisrtname: {
+            type: String,
+            required: true,
+        },
+        birthday: {
+            type: Date,
+            required: true,
+        },
+        birthday_city: {
+            type: String,
+            required: true,
+        },
+        description: {
+            type: String,
+            required: true,
+        },
+
+    },
+    // props: ['photo', 'name', 'fisrtname', 'birthday', 'birthday_city', 'description'],
+    methods: {
+        emettreEvent() {
+            this.$emit('first-event-created', {
+                message: 'hey ! cool nah ^_^'
+            })
+        }
+    },
 }
 </script>
 
