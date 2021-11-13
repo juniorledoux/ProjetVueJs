@@ -14,7 +14,7 @@
         <button @click="updateCount(1)" class="mb-2">cliquer</button>
         <p><input type="text" v-model="nom"></p> <p> votre nom est: <span>{{nom}}</span></p>
     </div>
-
+    <div class="container"></div>
     <!-- passage de donnees avec le prop -->
     <!-- <HelloWorld msg="Welcome to my about page" /> -->
 </div>
